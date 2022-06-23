@@ -1,0 +1,16 @@
+---
+  - name: Test Playbook
+    hosts: webservers
+    user: ansible
+    become: yes
+    connection: ssh
+    tasks:
+      - name: Installing Git on remote host
+        yum:
+          name: git
+          state: present
+      
+      - name: Installing apache
+        yum: 
+          name: httpd
+          state: present
